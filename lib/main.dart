@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:app/main_screen.dart';
+import 'package:app/question.dart';
 import 'package:flutter/material.dart';
+
 import 'config.dart';
 
 void main() {
@@ -9,7 +11,8 @@ void main() {
     home: SplashScreen(),
     debugShowCheckedModeBanner: false,
     routes: {
-      '/MainScreen': (BuildContext context) => MainScreen()
+      '/MainScreen': (BuildContext context) => MainScreen(),
+      '/Question': (BuildContext context) => Question()
     },
     theme: ThemeData(
         primaryColor: Color(Config.MAIN_COLOR),
@@ -31,10 +34,9 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScren extends State {
-
   _startTime() async {
     Timer(Duration(seconds: 1),
-        () => Navigator.of(context).pushReplacementNamed('/MainScreen'));
+        () => Navigator.of(context).pushReplacementNamed('/Question'));
   }
 
   @override
